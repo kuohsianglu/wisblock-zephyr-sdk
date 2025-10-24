@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+
+menu "Libraries"
+
+rsource "safeupdate/Kconfig"
+rsource "wisblock/Kconfig"
+
+endmenu

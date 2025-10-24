@@ -1,0 +1,14 @@
+# editors
+.vscode
+*.swp
+*~
+
+# python
+.venv
+
+# build
+/build*
+
+__pycache__/
+
+version.conf

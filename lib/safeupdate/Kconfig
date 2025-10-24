@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: Apache-2.0
+
+config SAFEUPDATE
+	bool "Two-step process to update firmware"
+	help
+	  This option enables the out-of-tree safeupdate
+
+config SAFEUPDATE_LIB
+	bool "Safeupdate Library"
+	default y
+	depends on SAFEUPDATE
+	select MCUMGR_MGMT_NOTIFICATION_HOOKS
+	select MCUMGR_GRP_IMG_STATUS_HOOKS
+	select HWINFO
+	help
+	  This option enables the out-of-tree Safeupdate library
+
+config SAFEUPDATE_BT
+	bool "Safeupdate SMP server over BT"
+	depends on SAFEUPDATE
+	help
+	  This option enables mcumgr SMP over BT

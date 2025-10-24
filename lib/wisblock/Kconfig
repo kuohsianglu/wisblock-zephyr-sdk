@@ -1,0 +1,53 @@
+# SPDX-License-Identifier: Apache-2.0
+config WISBLOCK
+	bool "RAK WisBlock Module"
+
+config WISBLOCK_SENSOR
+	bool "RAK WisBlock Sensor"
+	select SENSOR
+	help
+	  This option enables wisblock sensor support
+
+config WISBLOCK_SENSOR_RAK1901
+	bool "RAK1901 WisBlock Temperature and Humidity Sensor"
+	default y
+	depends on DT_HAS_SENSIRION_SHTCX_ENABLED
+	select SHTCX
+	select WISBLOCK_SENSOR
+	help
+	  WisBlock system with a Sensirion SHTC3 temperature and humidity sensor.
+
+config WISBLOCK_SENSOR_RAK1904
+	bool "RAK1904 WisBlock 3-axis Acceleration Sensor"
+	default y
+	depends on DT_HAS_ST_LIS3DH_ENABLED
+	select WISBLOCK_SENSOR
+	select LIS2DH_MEASURE_TEMPERATURE
+	help
+	  WisBlock system with an ST LIS3DH 3-axis acceleration sensor.
+
+config WISBLOCK_IO
+	bool "RAK WisBlock IO"
+	help
+	  This option enables wisblock IO support
+
+config WISBLOCK_IO_RAK17000
+	bool "RAK17000 is a DC motor driver module"
+	depends on WISBLOCK_IO
+	select NFCT_PINS_AS_GPIOS if BOARD_RAK4631_NRF52840
+	help
+	  RAK17000 module uses the DRV8833 motor driver IC from TI.
+	  It can drive one stepper motor or two DC motors.
+
+config WISBLOCK_IO_RAK13007
+	bool "RAK13007 is a relay module"
+	select WISBLOCK_IO
+	help
+	  RAK13007 is a WisBlock relay module based on Omron G5LE-14 DC3 which
+	  can control AC voltage up to 250V and a max AC current of 10A
+
+config WISBLOCK_SENSOR_FETCH_INTERVAL
+	int "Data fetching interval(s)"
+	default 60
+	help
+	  Sensor data fetching interval(s).

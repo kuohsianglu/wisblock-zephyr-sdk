@@ -1,0 +1,37 @@
+# Copyright (c) 2021 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+manifest:
+  self:
+    path: wisblock-zephyr-sdk
+
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: thingset
+      url-base: https://github.com/ThingSet
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: v4.2.0
+      import:
+        name-allowlist:
+          - cmsis
+          - cmsis_6
+          - hal_nordic
+          - hal_stm32
+          - hal_espressif
+          - littlefs
+          - mbedtls
+          - mcuboot
+          - segger
+          - loramac-node
+          - tinycrypt
+          - zcbor
+          - zephyr
+    - name: thingset-zephyr-sdk
+      remote: thingset
+      revision: main
+      path: modules/thingset-zephyr-sdk
+      import: true

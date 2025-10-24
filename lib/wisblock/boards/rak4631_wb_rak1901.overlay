@@ -1,0 +1,12 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+&i2c0 {
+	/* RAK1901 WisBlock Temperature and Humidity Sensor */
+	shtc3@70 {
+		compatible = "sensirion,shtc3", "sensirion,shtcx";
+		reg = <0x70>;
+		measure-mode = "normal";
+		clock-stretching;
+	};
+};
