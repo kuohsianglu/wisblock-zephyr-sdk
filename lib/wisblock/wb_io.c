@@ -1,4 +1,6 @@
 /*
+ * Copyright (c) 2025 Kenneth Lu
+ *
  * SPDX-License-Identifier: Apache-2.0
  */
 #include <zephyr/kernel.h>

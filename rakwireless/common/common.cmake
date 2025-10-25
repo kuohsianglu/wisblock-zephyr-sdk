@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Kenneth Lu
+#
 # SPDX-License-Identifier: Apache-2.0
 
 if(BOARD AND EXISTS ${CMAKE_SOURCE_DIR}/boards/${BOARD}.overlay)

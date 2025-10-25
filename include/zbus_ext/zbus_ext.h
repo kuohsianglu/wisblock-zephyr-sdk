@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Kenneth Lu
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
 #ifndef ZEPHYR_INCLUDE_ZBUS_EXT_LIB_H_
 #define ZEPHYR_INCLUDE_ZBUS_EXT_LIB_H_
 

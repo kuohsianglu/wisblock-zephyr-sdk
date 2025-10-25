@@ -1,5 +1,5 @@
 /*
- * QThinger
+ * Copyright (c) 2025 Kenneth Lu
  *
  * SPDX-License-Identifier: Apache-2.0
  */

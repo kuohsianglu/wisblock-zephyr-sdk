@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Kenneth Lu
+#
 # SPDX-License-Identifier: Apache-2.0
 
 set(WISBLOCK_BOARDS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/wisblock/boards)
