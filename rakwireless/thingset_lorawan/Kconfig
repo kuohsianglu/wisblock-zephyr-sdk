@@ -3,3 +3,52 @@
 # SPDX-License-Identifier: Apache-2.0
 
 source "Kconfig.zephyr"
+
+choice WISBLOCK_LORAWAN_REGION
+	prompt "WisBlock LoRaWAN Region"
+	default WISBLOCK_REGION_AS923
+	help
+	  Select the LoRaWAN region to use. This wrapper ensures only one
+	  region is active at a time.
+
+config WISBLOCK_REGION_AS923
+	bool "Asia 923MHz (AS923)"
+	select LORAMAC_REGION_AS923
+
+config WISBLOCK_REGION_AU915
+	bool "Australia 915MHz (AU915)"
+	select LORAMAC_REGION_AU915
+
+config WISBLOCK_REGION_CN470
+	bool "China 470MHz (CN470)"
+	select LORAMAC_REGION_CN470
+
+config WISBLOCK_REGION_CN779
+	bool "China 779MHz (CN779)"
+	select LORAMAC_REGION_CN779
+
+config WISBLOCK_REGION_EU433
+	bool "Europe 433MHz (EU433)"
+	select LORAMAC_REGION_EU433
+
+config WISBLOCK_REGION_EU868
+	bool "Europe 868MHz (EU868)"
+	select LORAMAC_REGION_EU868
+
+config WISBLOCK_REGION_KR920
+	bool "Korea 920MHz (KR920)"
+	select LORAMAC_REGION_KR920
+
+config WISBLOCK_REGION_IN865
+	bool "India 865MHz (IN865)"
+	select LORAMAC_REGION_IN865
+
+config WISBLOCK_REGION_US915
+	bool "US 915MHz (US915)"
+	select LORAMAC_REGION_US915
+
+config WISBLOCK_REGION_RU864
+	bool "Russia 864MHz (RU864)"
+	select LORAMAC_REGION_RU864
+
+endchoice
