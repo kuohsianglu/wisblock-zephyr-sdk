@@ -53,7 +53,7 @@ THINGSET_ADD_ITEM_FLOAT(APP_ID_SENSOR, APP_ID_SENSOR_HUMIDITY, "rHumidity_pct", 
 			THINGSET_ANY_R, TS_SUBSET_SUMMARY);
 
 /* CONTROL */
-THINGSET_ADD_GROUP(TS_ID_ROOT, APP_ID_CONTROL, "Control", data_objects_update_conf);
+THINGSET_ADD_GROUP(TS_ID_ROOT, APP_ID_CONTROL, "Control", THINGSET_NO_CALLBACK);
 
 THINGSET_ADD_ITEM_BOOL(APP_ID_CONTROL, APP_ID_CONTROL_HEATER_ON, "rHeaterOn", &heater_on,
 		       THINGSET_ANY_R, TS_SUBSET_LIVE);
@@ -71,13 +71,6 @@ static uint8_t data_objects_encode_sensor_val(float sensor_val)
 void reset_device(void)
 {
 	sys_reboot(SYS_REBOOT_COLD);
-}
-
-void data_objects_update_conf(enum thingset_callback_reason reason)
-{
-	if (reason == THINGSET_CALLBACK_POST_WRITE) {
-		LOG_INF("%s", __func__);
-	}
 }
 
 void data_objects_sensor_data(struct sensor_zmsg *s_zmsg)
